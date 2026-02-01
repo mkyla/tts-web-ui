@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS Web UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        #textInput {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        #speakButton {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #speakButton:hover {
+            background-color: #45a049;
+        }
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text to Speech Web UI</h1>
+    <textarea id="textInput" placeholder="Enter the text you want to convert to speech..."></textarea>
+    <button id="speakButton">Generate and Play Speech</button>
+    <audio id="audioPlayer" controls></audio>
+    <script>
+        document.getElementById('speakButton').addEventListener('click', async () => {
+            const text = document.getElementById('textInput').value.trim();
+            if (!text) {
+                alert('Please enter some text.');
+                return;
+            }
+            try {
+                const response = await fetch('http://localhost:8080/tts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: text })
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to generate speech: ' + response.statusText);
+                }
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const audio = document.getElementById('audioPlayer');
+                audio.src = url;
+                audio.play();
+            } catch (error) {
+                console.error(error);
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
