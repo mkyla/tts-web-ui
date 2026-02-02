@@ -12,25 +12,25 @@ Open index.html, enter "Hello!", click "Generate", play the MP3.
 
 # ✨ Features
 
-### 🎤 TTS Integration
+-🎤 TTS Integration
 - Calls Go TTS API for MP3 generation.
 - Real-time audio playback.
 
-### 📱 Responsive Design
+-📱 Responsive Design
 - Clean, centered layout.
 - Hover effects on buttons.
 
-### 🚀 Lightweight
+-🚀 Lightweight
 - No frameworks, pure HTML/JS.
 - Fast loading.
 
 # 📦 Installation
 
-### 🌐 Web Access
+-🌐 Web Access
 
 Host index.html on a web server, ensure CORS for API calls.
 
-### 🔧 Local Development
+-🔧 Local Development
 
 # Clone
 git clone https://github.com/mkyla/tts-web-ui.git
@@ -51,18 +51,18 @@ open index.html
 
 # 🛠️ Development
 
-### 🧩 Core Components
+-🧩 Core Components
 
 1. **index.html**: Form and audio elements.
 2. **script.js**: Fetch API, play audio.
 3. **style.css**: Centered, responsive design.
 
-### 🛠️ Tech Stack
+-🛠️ Tech Stack
 
 - Frontend: HTML/CSS/JS
 - API: Go TTS API
 
-### 💻 Development Setup
+-💻 Development Setup
 
 # 1. Clone
 git clone https://github.com/mkyla/tts-web-ui.git
