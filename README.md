@@ -51,16 +51,6 @@ open index.html
 
 ## 🛠️ Development
 
-### 📁 Project Structure
-
-```
-tts-web-ui/
-├── index.html        # Main UI
-├── style.css         # Styling
-├── script.js         # JS logic
-└── README.md         # Docs
-```
-
 ### 🧩 Core Components
 
 1. **index.html**: Form and audio elements.
