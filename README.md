@@ -53,11 +53,13 @@ open index.html
 
 ### 📁 Project Structure
 
+```
 tts-web-ui/
-├── index.html # Main UI
-├── style.css # Styling
-├── script.js # JS logic
-└── README.md # Docs
+├── index.html        # Main UI
+├── style.css         # Styling
+├── script.js         # JS logic
+└── README.md         # Docs
+```
 
 ### 🧩 Core Components
 
